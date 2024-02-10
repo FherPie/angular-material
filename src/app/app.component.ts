@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularAppBro';
+  options={
+    timeOut: 3000,
+    showProgressBar: true,
+    pauseOnHover: true,
+    clickToClose: true
+  };
 }
