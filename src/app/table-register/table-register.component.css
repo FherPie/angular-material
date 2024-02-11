@@ -3,6 +3,9 @@
   flex-direction:row;
   justify-content: space-between;
   align-items: baseline;
-  width: 600px;
+  width: 700px;
 }
 
+.mat-header-row{
+  background: #f6f4f4;
+ }

@@ -14,9 +14,11 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { FormRegisterComponent } from './form-register/form-register.component';
 import { TableRegisterComponent } from './table-register/table-register.component';
 import { MatTableModule } from '@angular/material/table';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { ToastrModule } from 'ngx-toastr';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { FormsModule } from '@angular/forms';
  //import { SimpleNotificationsModule } from 'angular2-notifications';
 
 
@@ -27,6 +29,7 @@ import { ToastrModule } from 'ngx-toastr';
     TableRegisterComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -41,10 +44,11 @@ import { ToastrModule } from 'ngx-toastr';
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
+    MatPaginatorModule,
     RouterModule.forRoot([]),
     ToastrModule.forRoot(), // ToastrModule added
   ],
-  providers: [],
+  providers: [{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

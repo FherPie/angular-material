@@ -1,1 +1,15 @@
-<p>form-register works!</p>
+
+<form #forma="ngForm" class="example-form">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Favorite food" value="Sushi" ngModel name="favoriteFood">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input type="number" matInput placeholder="cost" value="0" ngModel name="cost">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Leave a comment" value="some comments about the food" ngModel
+            name="comments"></textarea>
+    </mat-form-field>
+
+    <button (click)="forma.reset()" mat-raised-button color="primary">Reset Form</button>
+</form>
