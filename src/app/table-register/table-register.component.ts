@@ -47,7 +47,7 @@ export class TableRegisterComponent implements AfterViewInit {
 
 
   new() {
-    this.eventNew.emit();
+    this.eventNew.emit(new Map().set("tittle" ,"0"));
   }
 
 

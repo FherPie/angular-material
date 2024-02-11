@@ -3,3 +3,13 @@
   .app-sidenav2 {
     width: 80%;
 }
+
+.tollbar-example-class{
+  font-size: 1em;  /*14px*/
+  height: 2.5em;
+}
+
+.tittle{
+  position: absolute;
+   left: 20%;
+}

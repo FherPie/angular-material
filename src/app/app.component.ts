@@ -10,6 +10,10 @@ import { ToastrService } from 'ngx-toastr';
 export class AppComponent {
 
   @ViewChild('sidenav2') sidenav: MatSidenav | undefined;
+  tittle:String="";
+  events: string[] = [];
+
+
 
 constructor(private toastr: ToastrService){
 
@@ -17,7 +21,15 @@ constructor(private toastr: ToastrService){
 
 addItem($event: any) {
   this.sidenav?.toggle();
-  //this.toastr.success('Hello world!');
+
+  new Map<string, string>($event).forEach((value1, key1) => {
+     if(key1=="tittle"){
+      let index: number = parseInt(value1);
+        this.tittle= TITTLES[index];
+     }
+});
+
+  //this.toastr.success($event(value));
 }
 
 
@@ -28,4 +40,13 @@ addItem($event: any) {
     pauseOnHover: true,
     clickToClose: true
   };
+
+  closed() {
+    this.tittle="";
+    }
+    
 }
+
+
+const TITTLES= ['Registrar Paciente', 'red', 'orange', 'yellow', 'olive', 'green', 'purple',
+'fuchsia', 'lime', 'teal', 'aqua', 'blue', 'navy', 'black', 'gray'];

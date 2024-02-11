@@ -6,14 +6,13 @@
   
   .example-full-width {
     width: 100%;
-    padding: 10px;
+    padding-left: 5px;
+    padding-top: 5px;
     font-size:small;
     height: fit-content;
   }
   
-  div {
-    text-align: center
-  }
+
 
 
   
