@@ -14,6 +14,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class TableRegisterComponent implements AfterViewInit {
 
+
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort!: MatSort;
   @Output() eventNew = new EventEmitter();
@@ -47,7 +48,11 @@ export class TableRegisterComponent implements AfterViewInit {
 
 
   new() {
-    this.eventNew.emit(new Map().set("tittle" ,"0"));
+    this.eventNew.emit(new Map().set("app" ,"0"));
+  }
+
+  viewOdontograma() {
+    this.eventNew.emit(new Map().set("app" ,"1"));
   }
 
 

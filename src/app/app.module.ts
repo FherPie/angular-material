@@ -19,6 +19,9 @@ import {MatInputModule} from '@angular/material/input';
 import { ToastrModule } from 'ngx-toastr';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule } from '@angular/forms';
+import { OdontogramaFormComponent } from './odontograma-form/odontograma-form.component';
+import {MatMenuModule} from '@angular/material/menu';
+
  //import { SimpleNotificationsModule } from 'angular2-notifications';
 
 
@@ -26,7 +29,8 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     FormRegisterComponent,
-    TableRegisterComponent
+    TableRegisterComponent,
+    OdontogramaFormComponent
   ],
   imports: [
     FormsModule,
@@ -45,6 +49,7 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     MatInputModule,
     MatPaginatorModule,
+    MatMenuModule,
     RouterModule.forRoot([]),
     ToastrModule.forRoot(), // ToastrModule added
   ],

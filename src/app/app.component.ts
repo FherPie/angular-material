@@ -23,7 +23,7 @@ addItem($event: any) {
   this.sidenav?.toggle();
 
   new Map<string, string>($event).forEach((value1, key1) => {
-     if(key1=="tittle"){
+     if(key1=="app"){
       let index: number = parseInt(value1);
         this.tittle= TITTLES[index];
      }
@@ -31,6 +31,20 @@ addItem($event: any) {
 
   //this.toastr.success($event(value));
 }
+
+eventViewOdontog($event: any) {
+
+  this.sidenav?.toggle();
+
+  new Map<string, string>($event).forEach((value1, key1) => {
+     if(key1=="tittle"){
+      let index: number = parseInt(value1);
+        this.tittle= TITTLES[index];
+     }
+});
+
+}
+  
 
 
   title = 'angularAppBro';
@@ -48,5 +62,5 @@ addItem($event: any) {
 }
 
 
-const TITTLES= ['Registrar Paciente', 'red', 'orange', 'yellow', 'olive', 'green', 'purple',
+const TITTLES= ['Registrar Paciente', 'Odontrograma', 'orange', 'yellow', 'olive', 'green', 'purple',
 'fuchsia', 'lime', 'teal', 'aqua', 'blue', 'navy', 'black', 'gray'];
