@@ -10,45 +10,40 @@ import { ToastrService } from 'ngx-toastr';
 export class AppComponent {
 
   @ViewChild('sidenav2') sidenav: MatSidenav | undefined;
-  tittle:String="";
+  tittle: String = "";
   events: string[] = [];
+  showFormRegister: boolean = false;
+  showFormOdontogram: boolean = false;
 
 
 
-constructor(private toastr: ToastrService){
+  constructor(private toastr: ToastrService) {
 
-}
+  }
 
-addItem($event: any) {
-  this.sidenav?.toggle();
+  addItem($event: any) {
+    this.sidenav?.toggle();
 
-  new Map<string, string>($event).forEach((value1, key1) => {
-     if(key1=="app"){
-      let index: number = parseInt(value1);
-        this.tittle= TITTLES[index];
-     }
-});
+    new Map<string, string>($event).forEach((value1, key1) => {
+      if (key1 == "app") {
+        let index: number = parseInt(value1);
+        //this.toastr.success(index+"");
 
-  //this.toastr.success($event(value));
-}
+        this.tittle = TITTLES[index];
+        if (index == 0) {
+          this.showFormRegister = true;
+        } else if (index == 1) {
+          this.showFormOdontogram = true;
+        }
+      }
+    });
 
-eventViewOdontog($event: any) {
+  }
 
-  this.sidenav?.toggle();
-
-  new Map<string, string>($event).forEach((value1, key1) => {
-     if(key1=="tittle"){
-      let index: number = parseInt(value1);
-        this.tittle= TITTLES[index];
-     }
-});
-
-}
-  
 
 
   title = 'angularAppBro';
-  options={
+  options = {
     timeOut: 3000,
     showProgressBar: true,
     pauseOnHover: true,
@@ -56,11 +51,13 @@ eventViewOdontog($event: any) {
   };
 
   closed() {
-    this.tittle="";
-    }
-    
+    this.tittle = "";
+    this.showFormRegister=false;
+    this.showFormOdontogram=false;
+  }
+
 }
 
 
-const TITTLES= ['Registrar Paciente', 'Odontrograma', 'orange', 'yellow', 'olive', 'green', 'purple',
-'fuchsia', 'lime', 'teal', 'aqua', 'blue', 'navy', 'black', 'gray'];
+const TITTLES = ['Registrar Paciente', 'Odontrograma', 'orange', 'yellow', 'olive', 'green', 'purple',
+  'fuchsia', 'lime', 'teal', 'aqua', 'blue', 'navy', 'black', 'gray'];
