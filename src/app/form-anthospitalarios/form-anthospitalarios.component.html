@@ -1,0 +1,40 @@
+<form #forma="ngForm" class="form-datos">
+
+
+    <div class="input-data">
+        <mat-checkbox class="example-margin" labelPosition="before">
+            Ha recibido transfuciones
+        </mat-checkbox>
+    </div>
+
+    <div class="input-data">
+        <mat-checkbox class="example-margin" labelPosition="before">
+           Ha sido hospitalizado(a), y Porque lo(a) hospitalizaron ?
+        </mat-checkbox>
+        
+    <div class="input-data-extra">
+        <mat-form-field>
+            <input matInput placeholder="Campo" value="" ngModel name="nombre">
+        </mat-form-field>
+        <mat-checkbox class="example-margin" labelPosition="before">
+           No Aplica
+        </mat-checkbox>
+    </div>
+    </div>
+
+    
+    <div class="input-data">
+        <mat-checkbox class="example-margin" labelPosition="before">
+            Ha sido operado(a) y De que lo(a) operaron?
+        </mat-checkbox>
+        <div class="input-data-extra">
+            <mat-form-field>
+                <input matInput placeholder="Campo" value="" ngModel name="nombre">
+            </mat-form-field>
+            <mat-checkbox class="example-margin" labelPosition="before">
+               No Aplica
+            </mat-checkbox>
+        </div>
+    </div>
+    <button (click)="forma.reset()" mat-raised-button color="primary" class="press-data">Guardar</button>
+</form>

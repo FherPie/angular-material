@@ -1,15 +1,30 @@
-
-
-  .app-sidenav2 {
-    width: 80%;
+.app-sidenav2 {
+  width: 90%;
 }
 
-.tollbar-example-class{
-  font-size: 1em;  /*14px*/
+.tollbar-example-class {
+  font-size: 1em;
+  /*14px*/
   height: 2.5em;
 }
 
-.tittle{
+.tittle {
   position: absolute;
-   left: 20%;
+  left: 10%;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  row-gap: -10px;
+  max-height: 50px;
+  font-size: 0.65em;
+  margin-top: 25px
+}
+
+.logo>span {
+  /* font-size: 1em; */
+  margin-top: -13px;
 }

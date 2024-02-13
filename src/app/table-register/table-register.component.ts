@@ -15,9 +15,11 @@ import { ToastrService } from 'ngx-toastr';
 export class TableRegisterComponent implements AfterViewInit {
 
 
+
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort!: MatSort;
   @Output() eventNew = new EventEmitter();
+  filterValue:string="";
 
 
   ELEMENT_DATA!: UserData[];
@@ -45,6 +47,11 @@ export class TableRegisterComponent implements AfterViewInit {
     this.dataSource.filter = filterValue;
    // this.toastr.success('Hello world!', filterValue);
   }
+
+  clearFilterValue() {
+   this.dataSource.filter="";
+   this.filterValue="";
+    }
 
 
   new() {

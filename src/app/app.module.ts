@@ -21,6 +21,11 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule } from '@angular/forms';
 import { OdontogramaFormComponent } from './odontograma-form/odontograma-form.component';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatTabsModule} from '@angular/material/tabs';
+import { FormAntfamliarComponent } from './form-antfamliar/form-antfamliar.component';
+import { FormAnthospitalariosComponent } from './form-anthospitalarios/form-anthospitalarios.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
  //import { SimpleNotificationsModule } from 'angular2-notifications';
 
@@ -30,7 +35,9 @@ import {MatMenuModule} from '@angular/material/menu';
     AppComponent,
     FormRegisterComponent,
     TableRegisterComponent,
-    OdontogramaFormComponent
+    OdontogramaFormComponent,
+    FormAntfamliarComponent,
+    FormAnthospitalariosComponent
   ],
   imports: [
     FormsModule,
@@ -50,6 +57,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatInputModule,
     MatPaginatorModule,
     MatMenuModule,
+    MatCheckboxModule,
+MatTabsModule,
     RouterModule.forRoot([]),
     ToastrModule.forRoot(), // ToastrModule added
   ],

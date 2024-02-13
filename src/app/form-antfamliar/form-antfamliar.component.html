@@ -1,0 +1,49 @@
+<form #forma="ngForm" class="form-datos">
+
+
+    <div class="input-data">
+        <mat-checkbox class="example-margin" labelPosition="before">
+            Afecciones Cardiacas
+        </mat-checkbox>
+    </div>
+
+    <div class="input-data">
+        <mat-checkbox class="example-margin" labelPosition="before">
+            Diabates Mielitus
+        </mat-checkbox>
+    </div>
+
+    
+    <div class="input-data">
+        <mat-checkbox class="example-margin" labelPosition="before">
+            Hipertension
+        </mat-checkbox>
+    </div>
+
+    <div class="input-data">
+        <mat-checkbox class="example-margin" labelPosition="before">
+            Epilepsia
+        </mat-checkbox>
+    </div>
+
+    
+    <div class="input-data">
+        <mat-checkbox class="example-margin" labelPosition="before">
+         Cáncer
+        </mat-checkbox>
+    </div>
+
+
+    <div class="input-data-extra">
+        <mat-form-field>
+            <input matInput placeholder="Otros ? Cual ?" value="" ngModel name="nombre">
+        </mat-form-field>
+        <mat-checkbox class="example-margin" labelPosition="before">
+           No Aplica
+        </mat-checkbox>
+    </div>
+
+
+
+    <button (click)="forma.reset()" mat-raised-button color="primary" class="press-data">Guardar</button>
+</form>

@@ -1,57 +1,72 @@
 
 
-
-
-<form #forma="ngForm" class="example-form">
+<mat-tab-group>
+    <mat-tab label="Datos Personales">
+        <form #forma="ngForm" class="form-datos">
 
 
     
-    <mat-form-field class="example-full-width">
-        <input matInput placeholder="Nombre y Apellidos" value="" ngModel name="nombre">
-    </mat-form-field>
+            <mat-form-field class="input-data">
+                <input matInput placeholder="Nombre y Apellidos" value="" ngModel name="nombre">
+            </mat-form-field>
+        
+            <mat-form-field class="input-data">
+                <input type="number" matInput placeholder="Cedula De Identidad" value="0" ngModel name="cedula">
+            </mat-form-field>
+        
+        
+            <mat-form-field class="input-data">
+                <input type="number" matInput placeholder="Edad" value="0" ngModel name="edad">
+            </mat-form-field>
+        
+            <mat-form-field class="input-data">
+                <input type="number" matInput placeholder="Teléfono" value="0" ngModel name="telefono">
+            </mat-form-field>
+        
+            
+            <mat-form-field class="input-data">
+                <input type="number" matInput placeholder="Teléfono Adicional" value="0" ngModel name="telefono2">
+            </mat-form-field>
+        
+            <mat-form-field class="input-data">
+                <textarea matInput placeholder="Domicilio" value="" ngModel
+                    name="comments"></textarea>
+            </mat-form-field>
+        
+            <mat-form-field class="input-data">
+                <input matInput placeholder="Ocupación" value="" ngModel name="ocupacion">
+            </mat-form-field>
+        
+        
+            <mat-form-field class="input-data">
+                <input matInput placeholder="Fecha de nacimiento" value="" ngModel name="fecnac">
+            </mat-form-field>
+        
+            <mat-form-field class="input-data">
+                <input matInput placeholder="Referido por" value="" ngModel name="referidopor">
+            </mat-form-field>
+        
+        
+            <mat-form-field class="input-data">
+                <input matInput placeholder="Email" value="" ngModel name="email">
+            </mat-form-field>
+            <button (click)="forma.reset()" mat-raised-button color="primary" class="press-data">Guardar</button>
+        </form>
+        
+            
+    </mat-tab>
 
-    <mat-form-field class="example-full-width">
-        <input type="number" matInput placeholder="Cedula De Identidad" value="0" ngModel name="cedula">
-    </mat-form-field>
+    <mat-tab label="Ant.Familiares">
 
+<app-form-antfamliar></app-form-antfamliar>
 
-    <mat-form-field class="example-full-width">
-        <input type="number" matInput placeholder="Edad" value="0" ngModel name="edad">
-    </mat-form-field>
-
-    <mat-form-field class="example-full-width">
-        <input type="number" matInput placeholder="Teléfono" value="0" ngModel name="telefono">
-    </mat-form-field>
-
-    
-    <mat-form-field class="example-full-width">
-        <input type="number" matInput placeholder="Teléfono Adicional" value="0" ngModel name="telefono2">
-    </mat-form-field>
-
-    <mat-form-field class="example-full-width">
-        <textarea matInput placeholder="Domicilio" value="" ngModel
-            name="comments"></textarea>
-    </mat-form-field>
-
-    <mat-form-field class="example-full-width">
-        <input matInput placeholder="Ocupación" value="" ngModel name="ocupacion">
-    </mat-form-field>
-
-
-    <mat-form-field class="example-full-width">
-        <input matInput placeholder="Fecha de nacimiento" value="" ngModel name="fecnac">
-    </mat-form-field>
-
-    <mat-form-field class="example-full-width">
-        <input matInput placeholder="Referido por" value="" ngModel name="referidopor">
-    </mat-form-field>
-
-
-    <mat-form-field class="example-full-width">
-        <input matInput placeholder="Email" value="" ngModel name="email">
-    </mat-form-field>
-    <button (click)="forma.reset()" mat-raised-button color="primary">Guardar</button>
-</form>
+    </mat-tab>
+    <mat-tab label="Ant.Hospitalarios">
+        <app-form-anthospitalarios></app-form-anthospitalarios>
+    </mat-tab>
+  </mat-tab-group>
+  
+  
 
 
 
