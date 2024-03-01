@@ -18,14 +18,19 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule } from '@angular/mat
 import {MatInputModule} from '@angular/material/input';
 import { ToastrModule } from 'ngx-toastr';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OdontogramaFormComponent } from './odontograma-form/odontograma-form.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
 import { FormAntfamliarComponent } from './form-antfamliar/form-antfamliar.component';
 import { FormAnthospitalariosComponent } from './form-anthospitalarios/form-anthospitalarios.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-
+import { ProposeTableRegisterComponent } from './presupuestos/presupuesto-table/proposable-table.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { PresupuestoRegisterComponent } from './presupuestos/presupuesto-form/form-proposal.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatRadioModule} from '@angular/material/radio';
 
  //import { SimpleNotificationsModule } from 'angular2-notifications';
 
@@ -37,7 +42,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     TableRegisterComponent,
     OdontogramaFormComponent,
     FormAntfamliarComponent,
-    FormAnthospitalariosComponent
+    FormAnthospitalariosComponent,
+    ProposeTableRegisterComponent, 
+    PresupuestoRegisterComponent
   ],
   imports: [
     FormsModule,
@@ -58,7 +65,13 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatPaginatorModule,
     MatMenuModule,
     MatCheckboxModule,
-MatTabsModule,
+    MatDialogModule,
+    MatTabsModule,
+    MatGridListModule,
+    ReactiveFormsModule,
+    MatRadioModule,
+//    MatDatepickerModule,        // <----- import(must)
+    MatNativeDateModule,        // <----- import for date formating(optional)
     RouterModule.forRoot([]),
     ToastrModule.forRoot(), // ToastrModule added
   ],
