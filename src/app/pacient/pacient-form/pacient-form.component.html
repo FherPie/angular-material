@@ -4,8 +4,6 @@
     <mat-tab label="Datos Personales">
         <form #forma="ngForm" class="form-datos">
 
-
-    
             <mat-form-field class="input-data">
                 <input matInput placeholder="Nombre y Apellidos" value="" ngModel name="nombre">
             </mat-form-field>
@@ -50,7 +48,14 @@
             <mat-form-field class="input-data">
                 <input matInput placeholder="Email" value="" ngModel name="email">
             </mat-form-field>
-            <button (click)="forma.reset()" mat-raised-button color="primary" class="press-data">Guardar</button>
+        
+
+            <div class="btn-sec">
+                <!-- <button (click)="forma.reset()" mat-raised-button color="primary" class="press-data">Guardar</button>
+                <button mat-raised-button type="submit" color="primary" class="Update-btn" (click)="onAddCus()">Guardar</button> -->
+                <button mat-raised-button type="button" class="Discard-btn" (click)="openDialog()">Cancelar</button>
+              </div>
+
         </form>
         
             

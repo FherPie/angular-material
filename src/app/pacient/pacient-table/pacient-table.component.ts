@@ -3,16 +3,18 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ToastrService } from 'ngx-toastr';
+import { PacientFormComponent } from '../pacient-form/pacient-form.component';
+import { MatDialog } from '@angular/material/dialog';
 
 
 
 
 @Component({
-  selector: 'app-table-register',
-  templateUrl: './table-register.component.html',
-  styleUrls: ['./table-register.component.css']
+  selector: 'pacient-table',
+  templateUrl: './pacient-table.component.html',
+  styleUrls: ['./pacient-table.component.css']
 })
-export class TableRegisterComponent implements AfterViewInit {
+export class PacientTableComponent implements AfterViewInit {
 
 
 
@@ -26,10 +28,10 @@ export class TableRegisterComponent implements AfterViewInit {
   dataSource= new MatTableDataSource<UserData>(this.ELEMENT_DATA);
   displayedColumns=['id', 'name', 'progress', 'color'];
 
-  constructor(private toastr: ToastrService ){
+  constructor(private toastr: ToastrService, public dialog: MatDialog ){
     const users: UserData[] = [];
     for (let index = 0; index < 100; index++) {
-      users.push({"id": ""+index, "name":"name"+index, "progress":index+"%", "color": "red"});
+      users.push({"id": ""+index, "name":"name"+index, "nced":index+"", "color": "red"+index});
     }
     this.dataSource= new MatTableDataSource(users);
   }
@@ -55,7 +57,11 @@ export class TableRegisterComponent implements AfterViewInit {
 
 
   new() {
-    this.eventNew.emit(new Map().set("app" ,"0"));
+    //this.eventNew.emit(new Map().set("app" ,"0"));
+    const dialogRef = this.dialog.open(PacientFormComponent,{
+      width: '640px',disableClose: true 
+    });
+
   }
 
   viewOdontograma() {
@@ -74,6 +80,6 @@ const NAMES=['Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack',
 export interface UserData {
   id: string;
   name: string;
-  progress: string;
+  nced: string;
   color: string;
 }

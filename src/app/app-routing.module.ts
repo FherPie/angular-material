@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProposeTableRegisterComponent } from './presupuestos/presupuesto-table/proposable-table.component';
-import { TableRegisterComponent } from './table-register/table-register.component';
+import { PacientTableComponent } from './pacient/pacient-table/pacient-table.component';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
     path: 'one',
-    component: TableRegisterComponent,
+    component: PacientTableComponent,
     title: 'Pacient Register'
   },
   {

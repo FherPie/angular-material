@@ -11,19 +11,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { RouterModule}   from '@angular/router';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { FormRegisterComponent } from './form-register/form-register.component';
-import { TableRegisterComponent } from './table-register/table-register.component';
+import { PacientFormComponent } from './pacient/pacient-form/pacient-form.component';
+import { PacientTableComponent } from './pacient/pacient-table/pacient-table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { ToastrModule } from 'ngx-toastr';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { OdontogramaFormComponent } from './odontograma-form/odontograma-form.component';
+import { OdontogramaFormComponent } from './pacient/odontograma-form/odontograma-form.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
-import { FormAntfamliarComponent } from './form-antfamliar/form-antfamliar.component';
-import { FormAnthospitalariosComponent } from './form-anthospitalarios/form-anthospitalarios.component';
+import { FormAntfamliarComponent } from './pacient/form-antfamliar/form-antfamliar.component';
+import { FormAnthospitalariosComponent } from './pacient/form-anthospitalarios/form-anthospitalarios.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ProposeTableRegisterComponent } from './presupuestos/presupuesto-table/proposable-table.component';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -31,6 +31,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { PresupuestoRegisterComponent } from './presupuestos/presupuesto-form/form-proposal.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatRadioModule} from '@angular/material/radio';
+import { DiscardInfoComponentComponent } from './pacient/discard-info-component/discard-info-component.component';
 
  //import { SimpleNotificationsModule } from 'angular2-notifications';
 
@@ -38,13 +39,14 @@ import {MatRadioModule} from '@angular/material/radio';
 @NgModule({
   declarations: [
     AppComponent,
-    FormRegisterComponent,
-    TableRegisterComponent,
+    PacientTableComponent,
     OdontogramaFormComponent,
     FormAntfamliarComponent,
     FormAnthospitalariosComponent,
     ProposeTableRegisterComponent, 
-    PresupuestoRegisterComponent
+    PresupuestoRegisterComponent,
+    PacientFormComponent,
+    DiscardInfoComponentComponent
   ],
   imports: [
     FormsModule,
