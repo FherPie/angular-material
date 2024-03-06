@@ -2,57 +2,56 @@
 
 <mat-tab-group>
     <mat-tab label="Datos Personales">
-        <form #forma="ngForm" class="form-datos">
+        <form #forma="ngForm" class="form-datos" [formGroup]="addPacientForm">
 
             <mat-form-field class="input-data">
-                <input matInput placeholder="Nombre y Apellidos" value="" ngModel name="nombre">
+                <input matInput placeholder="Nombre y Apellidos" formControlName="pacientName">
             </mat-form-field>
         
             <mat-form-field class="input-data">
-                <input type="number" matInput placeholder="Cedula De Identidad" value="0" ngModel name="cedula">
+                <input type="number" matInput placeholder="Cedula De Identidad"  formControlName="pacientDni">
             </mat-form-field>
         
         
             <mat-form-field class="input-data">
-                <input type="number" matInput placeholder="Edad" value="0" ngModel name="edad">
+                <input type="number" matInput placeholder="Edad"   formControlName="pacientAge">
             </mat-form-field>
         
             <mat-form-field class="input-data">
-                <input type="number" matInput placeholder="Teléfono" value="0" ngModel name="telefono">
+                <input type="number" matInput placeholder="Teléfono"   formControlName="pacientFono">
             </mat-form-field>
         
             
             <mat-form-field class="input-data">
-                <input type="number" matInput placeholder="Teléfono Adicional" value="0" ngModel name="telefono2">
+                <input type="number" matInput placeholder="Teléfono Adicional"   formControlName="pacientFono2">
             </mat-form-field>
         
             <mat-form-field class="input-data">
-                <textarea matInput placeholder="Domicilio" value="" ngModel
-                    name="comments"></textarea>
+                <textarea matInput placeholder="Domicilio"   formControlName="pacientAddress"></textarea>
             </mat-form-field>
         
             <mat-form-field class="input-data">
-                <input matInput placeholder="Ocupación" value="" ngModel name="ocupacion">
-            </mat-form-field>
-        
-        
-            <mat-form-field class="input-data">
-                <input matInput placeholder="Fecha de nacimiento" value="" ngModel name="fecnac">
-            </mat-form-field>
-        
-            <mat-form-field class="input-data">
-                <input matInput placeholder="Referido por" value="" ngModel name="referidopor">
+                <input matInput placeholder="Ocupación"  formControlName="pacientOccupation">
             </mat-form-field>
         
         
             <mat-form-field class="input-data">
-                <input matInput placeholder="Email" value="" ngModel name="email">
+                <input matInput placeholder="Fecha de nacimiento"  formControlName="pacientFecnac">
+            </mat-form-field>
+        
+            <mat-form-field class="input-data">
+                <input matInput placeholder="Referido por"  formControlName="pacientReferredBy">
+            </mat-form-field>
+        
+        
+            <mat-form-field class="input-data">
+                <input matInput placeholder="Email"  formControlName="pacientEmail">
             </mat-form-field>
         
 
             <div class="btn-sec">
-                <!-- <button (click)="forma.reset()" mat-raised-button color="primary" class="press-data">Guardar</button>
-                <button mat-raised-button type="submit" color="primary" class="Update-btn" (click)="onAddCus()">Guardar</button> -->
+                <!-- <button (click)="forma.reset()" mat-raised-button color="primary" class="press-data">Guardar</button>-->
+                <button mat-raised-button type="submit" color="primary" class="Update-btn" (click)="onAddPacient()">Guardar</button>
                 <button mat-raised-button type="button" class="Discard-btn" (click)="openDialog()">Cancelar</button>
               </div>
 

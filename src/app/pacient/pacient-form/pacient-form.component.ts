@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { DiscardInfoComponentComponent } from '../discard-info-component/discard-info-component.component';
 
@@ -10,7 +10,9 @@ import { DiscardInfoComponentComponent } from '../discard-info-component/discard
 })
 export class PacientFormComponent {
 
-  public addCusForm!: FormGroup;
+
+  public addPacientForm!: FormGroup;
+
 
   constructor(
     private fb: FormBuilder,
@@ -20,26 +22,39 @@ export class PacientFormComponent {
   }
 
   public ngOnInit(): void {
-    this.addCusForm = this.fb.group({
-      //IdProof: null,
-      firstname: [this.fname, [Validators.required, Validators.pattern('[a-zA-Z]+([a-zA-Z ]+)*')]],
-      lastname: [this.lname, [Validators.required, Validators.pattern('[a-zA-Z]+([a-zA-Z ]+)*')]],
-      email: [null, [Validators.required, Validators.email]],
-    });
-    this.breakpoint = window.innerWidth <= 600 ? 1 : 2; // Breakpoint observer code
+    this.addPacientForm = this.fb.group({
+      pacientId: null,
+      pacientName: ['', [Validators.required, Validators.pattern('[a-zA-Z]+([a-zA-Z ]+)*')]],
+      pacientDni: ['', [Validators.required, Validators.pattern('[0-9]*')]],
+      pacientAge: ['', [Validators.required, Validators.pattern('[0-9]*')]],
+      pacientFono: ['', [Validators.required, Validators.pattern('[0-9]*')]],
+      pacientFono2: ['', [Validators.required, Validators.pattern('[0-9]*')]],
+      pacientAddress: ['', [Validators.required, Validators.pattern('[a-zA-Z]+([a-zA-Z ]+)*')]],
+      pacientOccupation: ['', [Validators.required, Validators.pattern('[a-zA-Z]+([a-zA-Z ]+)*')]],
+      pacientFecnac: ['', [Validators.required, Validators.pattern('[a-zA-Z]+([a-zA-Z ]+)*')]],
+      pacientReferredBy: ['', [Validators.required, Validators.pattern('[a-zA-Z]+([a-zA-Z ]+)*')]],
+      pacientEmail: ['', [Validators.required, Validators.email]]
+      });
+    //this.breakpoint = window.innerWidth <= 600 ? 1 : 2; // Breakpoint observer code
   }
 
 
   openDialog(): void {
     //console.log(this.wasFormChanged);
-    if(this.addCusForm?.dirty) {
+    if(this.addPacientForm?.dirty) {
        const dialogRef = this.dialog.open(DiscardInfoComponentComponent, {
-         width: '340px',
+         width: '50em',
        });
      } else {
       this.dialog.closeAll();
      }
   }
 
+
+  public onAddPacient(): void {
+
+    console.log("Pacient Info",this.addPacientForm.value);
+    
+  }
 
 }
