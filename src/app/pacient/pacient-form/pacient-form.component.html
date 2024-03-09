@@ -5,53 +5,54 @@
         <form #forma="ngForm" class="form-datos" [formGroup]="addPacientForm">
 
             <mat-form-field class="input-data">
-                <input matInput placeholder="Nombre y Apellidos" formControlName="pacientName">
+                <input matInput placeholder="Nombre y Apellidos" formControlName="pacientNames" required="true">
             </mat-form-field>
         
             <mat-form-field class="input-data">
-                <input type="number" matInput placeholder="Cedula De Identidad"  formControlName="pacientDni">
+                <input type="number" matInput placeholder="Cedula De Identidad"  formControlName="pacientDni" required="true">
             </mat-form-field>
         
         
             <mat-form-field class="input-data">
-                <input type="number" matInput placeholder="Edad"   formControlName="pacientAge">
+                <input type="number" matInput placeholder="Edad"   formControlName="pacientAge" required="true">
             </mat-form-field>
         
             <mat-form-field class="input-data">
-                <input type="number" matInput placeholder="Teléfono"   formControlName="pacientFono">
+                <input type="number" matInput placeholder="Teléfono"   formControlName="pacientFono" required="true">
             </mat-form-field>
         
             
             <mat-form-field class="input-data">
-                <input type="number" matInput placeholder="Teléfono Adicional"   formControlName="pacientFono2">
+                <input type="number" matInput placeholder="Teléfono Adicional"   formControlName="pacientFono2" required="true">
             </mat-form-field>
         
             <mat-form-field class="input-data">
-                <textarea matInput placeholder="Domicilio"   formControlName="pacientAddress"></textarea>
+                <textarea matInput placeholder="Domicilio"   formControlName="pacientAddress" required="true"></textarea>
             </mat-form-field>
         
             <mat-form-field class="input-data">
-                <input matInput placeholder="Ocupación"  formControlName="pacientOccupation">
-            </mat-form-field>
-        
-        
-            <mat-form-field class="input-data">
-                <input matInput placeholder="Fecha de nacimiento"  formControlName="pacientFecnac">
-            </mat-form-field>
-        
-            <mat-form-field class="input-data">
-                <input matInput placeholder="Referido por"  formControlName="pacientReferredBy">
+                <input matInput placeholder="Ocupación"  formControlName="pacientOccupation" required="true">
             </mat-form-field>
         
         
             <mat-form-field class="input-data">
-                <input matInput placeholder="Email"  formControlName="pacientEmail">
+                <input matInput placeholder="Fecha de nacimiento"  formControlName="pacientFecnac" required="true">
+            </mat-form-field>
+        
+            <mat-form-field class="input-data">
+                <input matInput placeholder="Referido por"  formControlName="pacientReferredBy" required="true">
+            </mat-form-field>
+        
+        
+            <mat-form-field class="input-data">
+                <input matInput placeholder="Email"  formControlName="pacientEmail" required="true">
             </mat-form-field>
         
 
             <div class="btn-sec">
                 <!-- <button (click)="forma.reset()" mat-raised-button color="primary" class="press-data">Guardar</button>-->
-                <button mat-raised-button type="submit" color="primary" class="Update-btn" (click)="onAddPacient()">Guardar</button>
+                <button mat-raised-button type="submit" color="primary" class="Update-btn" (click)="pacientDto.pacientId ?  onUpdatePacient():onAddPacient()"> {{pacientDto.pacientId ?  'Actualizar':'Guardar'}} </button>
+                <!-- <button mat-raised-button type="submit" color="primary" class="Update-btn" (click)="onUpdatePacient()">Actualizar</button> -->
                 <button mat-raised-button type="button" class="Discard-btn" (click)="openDialog()">Cancelar</button>
               </div>
 

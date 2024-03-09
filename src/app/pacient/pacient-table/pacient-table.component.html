@@ -29,31 +29,51 @@
 
 <div class="example-container">
   <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  
   <mat-table [dataSource]="dataSource" matSort>
+
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-    <!-- ID Column -->
+    <mat-row  *matRowDef="let row; columns: displayedColumns; ; let i = index"></mat-row>
+
+    <!-- Numero -->
     <ng-container matColumnDef="id">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Nro. </mat-header-cell>
-      <mat-cell *matCellDef="let row" data-label="id"> {{row.id}} </mat-cell>
+      <mat-cell *matCellDef="let i=index" data-label="i"> {{i}} </mat-cell>
+    </ng-container>
+
+    <!-- id Column -->
+    <ng-container matColumnDef="pacientId">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
+      <mat-cell *matCellDef="let row" data-label="pacientId"> {{row.pacientId}} </mat-cell>
     </ng-container>
 
     <!-- Name Column -->
-    <ng-container matColumnDef="name">
+    <ng-container matColumnDef="pacientNames">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Nombres/Apellidos </mat-header-cell>
-      <mat-cell *matCellDef="let row" data-label="name"> {{row.name}} </mat-cell>
+      <mat-cell *matCellDef="let row" data-label="pacientNames"> {{row.pacientNames}} </mat-cell>
     </ng-container>
 
-    <!-- Progress Column -->
-    <ng-container matColumnDef="progress">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Cédula </mat-header-cell>
-      <mat-cell *matCellDef="let row" data-label="progress"> {{row.nced}} </mat-cell>
+    <!-- CI Column -->
+    <ng-container matColumnDef="pacientDni">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> CI </mat-header-cell>
+      <mat-cell *matCellDef="let row" data-label="pacientDni"> {{row.pacientDni}} </mat-cell>
     </ng-container>
 
-    <!-- Color Column -->
-    <ng-container matColumnDef="color">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Teléfono </mat-header-cell>
-      <mat-cell *matCellDef="let row"  data-label="color"> {{row.color}} </mat-cell>
+    <!-- Email Column -->
+    <ng-container matColumnDef="pacientEmail">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Email </mat-header-cell>
+      <mat-cell *matCellDef="let row" data-label="pacientEmail"> {{row.pacientEmail}} </mat-cell>
+    </ng-container>
+
+  
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef > Actions </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <button mat-icon-button (click)="openEditPacient(row)"> <mat-icon  >edit</mat-icon></button>
+        <button mat-icon-button (click)="deletePacient(row)" color="warn" aria-label="Delete">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-cell>
     </ng-container>
   </mat-table>
 </div>

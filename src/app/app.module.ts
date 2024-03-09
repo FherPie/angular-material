@@ -32,6 +32,8 @@ import { PresupuestoRegisterComponent } from './presupuestos/presupuesto-form/fo
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatRadioModule} from '@angular/material/radio';
 import { DiscardInfoComponentComponent } from './pacient/discard-info-component/discard-info-component.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DeleteRequestComponentComponent } from './pacient/delete-request-component/delete-request-component.component';
 
  //import { SimpleNotificationsModule } from 'angular2-notifications';
 
@@ -46,7 +48,8 @@ import { DiscardInfoComponentComponent } from './pacient/discard-info-component/
     ProposeTableRegisterComponent, 
     PresupuestoRegisterComponent,
     PacientFormComponent,
-    DiscardInfoComponentComponent
+    DiscardInfoComponentComponent,
+    DeleteRequestComponentComponent
   ],
   imports: [
     FormsModule,
@@ -74,6 +77,7 @@ import { DiscardInfoComponentComponent } from './pacient/discard-info-component/
     MatRadioModule,
 //    MatDatepickerModule,        // <----- import(must)
     MatNativeDateModule,        // <----- import for date formating(optional)
+    HttpClientModule,
     RouterModule.forRoot([]),
     ToastrModule.forRoot(), // ToastrModule added
   ],
